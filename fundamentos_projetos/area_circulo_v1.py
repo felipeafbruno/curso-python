@@ -1,4 +1,3 @@
-# -*- coding: utf8 -*-
 pi = 3.1415
 raio = 3
 
