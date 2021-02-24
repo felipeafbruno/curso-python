@@ -9,7 +9,7 @@ for texto in textos:
     found = False
     for palavra in texto.lower().split():
         if palavra in PALAVRAS_PROIBIDAS:
-            print('Texto possui pelo menis uma palavra proibida:',palavra)
+            print('Texto possui pelo menis uma palavra proibida:', palavra)
             found = True
             break
 
