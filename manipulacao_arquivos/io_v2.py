@@ -1,4 +1,3 @@
-# arquivo = open('./manipulacao_arquivos/pessoas.csv')
 arquivo = open('pessoas.csv')
 
 for registro in arquivo:
