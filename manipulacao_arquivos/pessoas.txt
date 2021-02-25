@@ -1,0 +1,5 @@
+Nome: Bernardo e Idade:  8
+Nome: Furtuna e Idade:  8
+Nome: Felipe e Idade:  26
+Nome: Pedro e Idade:  32
+Nome: Paulo e Idade:  45
