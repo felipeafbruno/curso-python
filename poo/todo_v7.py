@@ -1,5 +1,7 @@
 from datetime import date, datetime, timedelta
 
+class TarefaNaoEncontrado(Exception):
+    pass
 
 class Projeto:
     def __init__(self, nome):
@@ -37,8 +39,11 @@ class Projeto:
         return [tarefa for tarefa in self.lista_tarefas if not tarefa.feito]
 
     def procurar(self, descricao):
-        # Possível IndexError
-        return [tarefa for tarefa in self.lista_tarefas if tarefa.descricao == descricao][0]
+        try:
+            # Possível IndexError
+            return [tarefa for tarefa in self.lista_tarefas if tarefa.descricao == descricao][0]
+        except IndexError as e:
+            raise TarefaNaoEncontrado(str(e))
 
     def __str__(self):
         return f'{self.nome} ({len(self.pendentes())} tarefa(s) pendente(s))'
@@ -92,7 +97,12 @@ def main():
     casa.add('Lavar os Pratos')
     casa += (TarefaRecorrente('Trocar lençóis', datetime.now(), 7))
     casa.add(casa.procurar('Trocar lençóis').concluir())
-    casa.procurar('Lavar os Pratos').concluir()
+    
+    try:
+        casa.procurar('Lavar os Prats').concluir()
+    except TarefaNaoEncontrado as e:
+        print(f'A causa foi "{str(e)}"!') 
+
     for tarefa in casa:
         print(f'- {tarefa}')
 
