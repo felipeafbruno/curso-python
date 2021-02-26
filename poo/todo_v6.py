@@ -80,8 +80,8 @@ def main():
     casa.add('Brincar com a Furtuninha')
     casa.add('Terminar o módulo de POO', datetime.now())
     casa.add('Lavar os Pratos')
-    casa.lista_tarefas.append(TarefaRecorrente('Trocar lençóis', datetime.now(), 7))
-    casa.lista_tarefas.append(casa.procurar('Trocar lençóis').concluir())
+    casa.add(TarefaRecorrente('Trocar lençóis', datetime.now(), 7))
+    casa.add(casa.procurar('Trocar lençóis').concluir())
     casa.procurar('Lavar os Pratos').concluir()
     for tarefa in casa:
         print(f'- {tarefa}')
