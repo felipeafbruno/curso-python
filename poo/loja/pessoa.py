@@ -1,15 +1,10 @@
-MAIOR_IDADE = 18
-
-
 class Pessoa:
-    def __init__(self, nome, idade):
+    def __init__(self, nome, idade):    
         self.nome = nome
         self.idade = idade
 
     def __str__(self):
-        if not self.idade:
-            return self.nome
-        return f'{self.nome} ({self.idade} anos)'
+        return f'Nome: {self.nome} e Idade: {self.idade}'
 
     def is_adulto(self):
-        return (self.idade or 0) > MAIOR_IDADE
+        return True if self.idade > 18 else False

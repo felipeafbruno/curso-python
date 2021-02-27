@@ -1,22 +1,23 @@
 from datetime import datetime
-from loja import Cliente, Vendedor, Compra
+
+from loja.cliente import Cliente
+from loja.vendedor import Vendedor
+from loja.compra import Compra
 
 
-def main():
-    cliente = Cliente('Maria Lima', 44)
-    vendedor = Vendedor('Pedro Garrido', 36, 5000)
-    compra1 = Compra(cliente, datetime.now(), 512)
-    compra2 = Compra(cliente, datetime(2018, 6, 4), 256)
-    cliente.registrar_compra(compra1)
-    cliente.registrar_compra(compra2)
-    print(f'Cliente: {cliente}', '(adulto)' if cliente.is_adulto() else '')
-    print(f'Vendedor: {vendedor}')
+cliente = Cliente('Felipe', 26)
+vendedor = Vendedor('Bernardo', 45, 2500)
 
-    valor_total = cliente.total_compras()
-    qtde_compras = len(cliente.compras)
-    print(f'Total: {valor_total} em {qtde_compras} compras')
-    print(f'Última compra: {cliente.get_data_ultima_compra()}')
+compra1 = Compra(vendedor, datetime.now(), 65.48)
+compra2 = Compra(vendedor, datetime.now(), 125.58)
+compra3 = Compra(vendedor, datetime.now(), 1500.81)
 
+cliente.registrar_compra(compra1)
+cliente.registrar_compra(compra2)
+cliente.registrar_compra(compra3)
 
-if __name__ == '__main__':
-    main()
+data_ultima_compra = cliente.get_data_ultima_compra()
+print('Data da ultima compra:', data_ultima_compra)
+
+valor_total_compra = cliente.total_compras()
+print('Valor total das compras: R$',valor_total_compra)
