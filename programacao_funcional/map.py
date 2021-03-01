@@ -16,8 +16,11 @@ so_idade = map(lambda pessoa: pessoa['idade'], lista_2)
 print(sum(so_idade))
 
 # Desafio
+
+
 def criar_descricao(pessoa):
     return f'{pessoa["nome"]} tem {pessoa["idade"]} anos'
- 
+
+
 descricao = tuple(map(criar_descricao, lista_2))
 print(descricao)
