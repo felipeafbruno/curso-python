@@ -8,7 +8,15 @@ sql = '''
     VALUES
         (%s, %s)
 '''
-args=(('Furtuno', '3333-4444'), ('Felipe', '5555-6666'), ('Pedro', '7777-8888'))
+args=(
+        ('Furtuna', '3333-4444'), 
+        ('Felipe', '5555-6666'), 
+        ('Pedro', '7777-8888'), 
+        ('Bernardo', '9999-1111'), 
+        ('Bernardete', '9981-1118'), 
+        ('Mariana', '9971-1114'),
+        ('Paulo', '9921-1418')
+    )
 
 
 with nova_conexao() as conexao:
