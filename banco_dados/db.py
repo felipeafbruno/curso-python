@@ -7,7 +7,7 @@ parametros = dict(
     port='3306',
     user='root',
     passwd='root@root?',
-    auth_plugin='mysql_nativa_password'
+    auth_plugin='mysql_native_password'
 )
 
 @contextmanager # generator
