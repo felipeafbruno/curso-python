@@ -8,5 +8,5 @@ with nova_conexao() as conexao:
     cursor = conexao.cursor()
     cursor.execute(sql)
 
-    for contato in cursor.fetchall():
+    for contato in cursor:
         print(f'\t'.join(str(campos) for campos in contato))
