@@ -7,7 +7,7 @@ parametros = dict(
     port='3306',
     user='root',
     passwd='root@root?',
-    db='agend',
+    db='agenda',
     auth_plugin='mysql_native_password'
 )
 
