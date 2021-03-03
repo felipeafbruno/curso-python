@@ -18,8 +18,11 @@ tabela_emails = '''
 
 with nova_conexao() as conexao:
     try:
-        cursor = conexao.cursor()
-        cursor.execute(tabela_contatos)
-        cursor.execute(tabela_emails)
+        try:
+            cursor = conexao.cursor()
+            cursor.execute(tabela_contatos)
+            cursor.execute(tabela_emails)
+        except ProgrammingError as e:
+            print(f'Error: {e.msg}')
     except ProgrammingError as e:
-        print(f'Error: {e.msg}')
+            print(f'Error na CONEXÃO: {e.msg}')
