@@ -2,7 +2,7 @@ from mysql.connector.errors import ProgrammingError
 from db import nova_conexao
 
 
-sql = 'SELECT * FROM contatos LIMIT 2'
+sql = 'SELECT * FROM contatos LIMIT 2 '
 
 
 with nova_conexao() as conexao:
